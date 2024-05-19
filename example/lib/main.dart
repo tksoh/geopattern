@@ -4,26 +4,28 @@ import 'package:flutter/material.dart';
 import 'package:geopattern_flutter/geopattern_flutter.dart';
 import 'package:geopattern_flutter/patterns/overlapping_circles.dart';
 
-void main() => runApp(App());
+void main() => runApp(const App());
 
 class App extends StatelessWidget {
+  const App({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
-          SliverAppBar(
+          const SliverAppBar(
             backgroundColor: Colors.yellow,
             expandedHeight: 256,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
-              title: const Text("AppBar"),
+              title: Text("AppBar"),
               background: Stack(
                 fit: StackFit.expand,
                 children: <Widget>[
                   AppBarBackground(),
-                  const DecoratedBox(
+                  DecoratedBox(
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         begin: Alignment(0.0, -1.0),
@@ -52,6 +54,8 @@ class App extends StatelessWidget {
 }
 
 class AppBarBackground extends StatelessWidget {
+  const AppBarBackground({super.key});
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
