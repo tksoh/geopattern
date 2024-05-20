@@ -7,7 +7,7 @@ import 'pattern.dart';
 /// A nx x ny grid of a smaller square inside a larger square
 ///
 /// https://github.com/suyash/geopattern_flutter/blob/master/examples/images/nested_squares.png
-class NestedSquares extends Pattern {
+class NestedSquares extends GeoPattern {
   final double side;
   final double outerside;
   final int nx;

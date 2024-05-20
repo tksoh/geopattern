@@ -5,7 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'pattern.dart';
 
 /// https://github.com/suyash/geopattern_flutter/blob/master/examples/images/plaid.png
-class Plaid extends Pattern {
+class Plaid extends GeoPattern {
   final List<double> horizontalOffsets;
   final List<double> verticalOffsets;
   final List<double> horizontalSizes;

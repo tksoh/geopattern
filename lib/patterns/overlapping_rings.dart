@@ -5,7 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'pattern.dart';
 
 /// https://github.com/suyash/geopattern_flutter/blob/master/examples/images/overlapping_rings.png
-class OverlappingRings extends Pattern {
+class OverlappingRings extends GeoPattern {
   final double radius;
   final double strokeWidth;
   final int nx;

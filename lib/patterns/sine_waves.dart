@@ -9,7 +9,7 @@ import 'pattern.dart';
 /// draws only a single period using 2 cubic paths.
 ///
 /// https://github.com/suyash/geopattern_flutter/blob/master/examples/images/sine_waves.png
-class SineWaves extends Pattern {
+class SineWaves extends GeoPattern {
   final double amplitude;
   final double period;
   final List<double> strokeOffsets;

@@ -7,7 +7,7 @@ import 'pattern.dart';
 /// A nx x ny repeating grid of squares
 ///
 /// https://github.com/suyash/geopattern_flutter/blob/master/examples/images/squares.png
-class Squares extends Pattern {
+class Squares extends GeoPattern {
   final double side;
   final int nx;
   final int ny;

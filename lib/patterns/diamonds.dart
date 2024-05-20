@@ -7,7 +7,7 @@ import 'pattern.dart';
 /// A grid of diamonds with each extending w units wide and h units high
 ///
 /// https://github.com/suyash/geopattern_flutter/blob/master/examples/images/diamonds.png
-class Diamonds extends Pattern {
+class Diamonds extends GeoPattern {
   final double w;
   final double h;
   final int nx;

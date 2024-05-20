@@ -8,7 +8,7 @@ import 'pattern.dart';
 /// https://github.com/jasonlong/geo_pattern/blob/master/lib/geo_pattern/structure_generators/hexagons_generator.rb
 ///
 /// https://github.com/suyash/geopattern_flutter/blob/master/examples/images/hexagons.png
-class Hexagons extends Pattern {
+class Hexagons extends GeoPattern {
   final double side;
   final int nx;
   final int ny;

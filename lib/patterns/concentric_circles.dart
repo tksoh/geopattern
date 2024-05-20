@@ -7,7 +7,7 @@ import 'pattern.dart';
 /// A nw x nh repeating grid of circles
 ///
 /// https://github.com/suyash/geopattern_flutter/blob/master/examples/images/concentric_circles.png
-class ConcentricCircles extends Pattern {
+class ConcentricCircles extends GeoPattern {
   final double radius;
   final double strokeWidth;
   final int nx;
