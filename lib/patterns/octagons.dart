@@ -7,7 +7,7 @@ import 'pattern.dart';
 /// https://github.com/jasonlong/geo_pattern/blob/master/lib/geo_pattern/structure_generators/octagons_generator.rb
 ///
 /// https://github.com/suyash/geopattern_flutter/blob/master/examples/images/octagons.png
-class Octagons extends Pattern {
+class Octagons extends GeoPattern {
   final double side;
   final int nx;
   final int ny;

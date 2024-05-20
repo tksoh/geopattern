@@ -73,7 +73,7 @@ class AppBarBackground extends StatelessWidget {
                   50 + gen.nextInt(2) * 150)));
       return CustomPaint(
           size: Size(constraints.maxWidth, constraints.maxHeight),
-          painter: FullPainter(pattern: pattern, background: Colors.yellow));
+          painter: GeoPainter(pattern: pattern, background: Colors.yellow));
     });
   }
 }

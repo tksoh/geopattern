@@ -5,7 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'pattern.dart';
 
 /// https://github.com/suyash/geopattern_flutter/blob/master/examples/images/chevrons.png
-class Chevrons extends Pattern {
+class Chevrons extends GeoPattern {
   final double side;
   final int nx;
   final int ny;

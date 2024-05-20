@@ -5,11 +5,11 @@ import 'package:flutter/widgets.dart';
 import 'patterns/pattern.dart';
 
 /// A CustomPainter that takes a single pattern and draws it across the entire canvas.
-class FullPainter extends CustomPainter {
+class GeoPainter extends CustomPainter {
   Color background;
-  Pattern pattern;
+  GeoPattern pattern;
 
-  FullPainter({required this.pattern, required this.background});
+  GeoPainter({required this.pattern, required this.background});
 
   @override
   void paint(Canvas canvas, Size size) {
