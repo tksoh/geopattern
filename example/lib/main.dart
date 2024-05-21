@@ -2,7 +2,21 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:geopattern_flutter/geopattern_flutter.dart';
+import 'package:geopattern_flutter/patterns/chevrons.dart';
+import 'package:geopattern_flutter/patterns/concentric_circles.dart';
+import 'package:geopattern_flutter/patterns/diamonds.dart';
+import 'package:geopattern_flutter/patterns/hexagons.dart';
+import 'package:geopattern_flutter/patterns/mosaic_squares.dart';
+import 'package:geopattern_flutter/patterns/nested_squares.dart';
+import 'package:geopattern_flutter/patterns/octagons.dart';
 import 'package:geopattern_flutter/patterns/overlapping_circles.dart';
+import 'package:geopattern_flutter/patterns/overlapping_rings.dart';
+import 'package:geopattern_flutter/patterns/pattern.dart';
+import 'package:geopattern_flutter/patterns/plaid.dart';
+import 'package:geopattern_flutter/patterns/plus_signs.dart';
+import 'package:geopattern_flutter/patterns/sine_waves.dart';
+import 'package:geopattern_flutter/patterns/squares.dart';
+import 'package:geopattern_flutter/patterns/triangles.dart';
 
 void main() => runApp(const App());
 
@@ -11,6 +25,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final hash = '0123456789' * 4;
+
     return MaterialApp(
         home: Scaffold(
       body: CustomScrollView(
@@ -40,16 +56,45 @@ class App extends StatelessWidget {
           ),
           SliverList(
               delegate: SliverChildListDelegate(<Widget>[
-            Card(child: Container(height: 200)),
-            Card(child: Container(height: 200)),
-            Card(child: Container(height: 200)),
-            Card(child: Container(height: 200)),
-            Card(child: Container(height: 200)),
-            Card(child: Container(height: 200)),
+            _buildPatternTile('Chevrons', Chevrons.fromHash(hash)),
+            _buildPatternTile(
+                'ConcentricCircles', ConcentricCircles.fromHash(hash)),
+            _buildPatternTile('Diamonds', Diamonds.fromHash(hash)),
+            _buildPatternTile('Hexagons', Hexagons.fromHash(hash)),
+            _buildPatternTile('MosaicSquares', MosaicSquares.fromHash(hash)),
+            _buildPatternTile('NestedSquares', NestedSquares.fromHash(hash)),
+            _buildPatternTile('Octagons', Octagons.fromHash(hash)),
+            _buildPatternTile(
+                'OverlappingCircles', OverlappingCircles.fromHash(hash)),
+            _buildPatternTile(
+                'OverlappingRings', OverlappingRings.fromHash(hash)),
+            _buildPatternTile('Plaid', Plaid.fromHash(hash)),
+            _buildPatternTile('PlusSigns', PlusSigns.fromHash(hash)),
+            _buildPatternTile('SineWaves', SineWaves.fromHash(hash)),
+            _buildPatternTile('Squares', Squares.fromHash(hash)),
+            _buildPatternTile('Triangles', Triangles.fromHash(hash)),
           ]))
         ],
       ),
     ));
+  }
+
+  Widget _buildPatternTile(String name, GeoPattern pattern,
+      {Color? background}) {
+    return ListTile(
+      title: Text(name),
+      subtitle: Container(
+        height: 200,
+        clipBehavior: Clip.antiAlias,
+        decoration: const BoxDecoration(),
+        child: CustomPaint(
+          painter: GeoPainter(
+            pattern: pattern,
+            background: background ?? Colors.yellow,
+          ),
+        ),
+      ),
+    );
   }
 }
 
