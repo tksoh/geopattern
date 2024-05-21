@@ -36,11 +36,7 @@ class SineWaves extends GeoPattern {
           return v / 16 * amplitude - amplitude / 2;
         }).toList(),
         strokeWidth = int.parse(hash[2], radix: 16) * 1.0,
-        strokeColors = hash.split("").map((String c) {
-          final v = int.parse(c, radix: 16);
-          final g = 50 + (v % 1) * 150;
-          return Color.fromARGB(((v / 16.0) * 100 + 50).round(), g, g, g);
-        }).toList(),
+        strokeColors = GeoPattern.hashColors(hash),
         _xoff = ((int.parse(hash[1], radix: 16) / 16.0 * 70 + 30) / 4) * .7;
 
   void paint(Canvas canvas, Offset offset) {

@@ -90,7 +90,7 @@ class App extends StatelessWidget {
         child: CustomPaint(
           painter: GeoPainter(
             pattern: pattern,
-            background: background ?? Colors.yellow,
+            background: background ?? Colors.transparent,
           ),
         ),
       ),
