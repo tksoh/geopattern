@@ -23,11 +23,7 @@ class OverlappingCircles extends GeoPattern {
         radius = int.parse(hash[0], radix: 16) / 16.0 * 50 + 30,
         nx = 6,
         ny = 6,
-        fillColors = hash.split("").map((String c) {
-          final v = int.parse(c, radix: 16);
-          final g = 50 + (v % 1) * 150;
-          return Color.fromARGB(((v / 16.0) * 100 + 50).round(), g, g, g);
-        }).toList();
+        fillColors = GeoPattern.hashColors(hash);
 
   void paint(Canvas canvas, Offset offset) {
     for (var y = 0; y < ny; y++) {

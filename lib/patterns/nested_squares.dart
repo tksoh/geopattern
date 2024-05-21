@@ -29,11 +29,7 @@ class NestedSquares extends GeoPattern {
         outerside = (int.parse(hash[0], radix: 16) / 16.0 * 5 + 4) * 7,
         nx = 6,
         ny = 6,
-        strokeColors = hash.split("").map((String c) {
-          final v = int.parse(c, radix: 16);
-          final g = 50 + (v % 1) * 150;
-          return Color.fromARGB(((v / 16.0) * 100 + 50).round(), g, g, g);
-        }).toList();
+        strokeColors = GeoPattern.hashColors(hash);
 
   void paint(Canvas canvas, Offset offset) {
     for (var y = 0; y < ny; y++) {
