@@ -25,7 +25,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final hash = '0123456789' * 4;
+    const hash = '3ddf120b430021c36c232c99ef8d926aea2acd6b';
 
     return MaterialApp(
       home: Scaffold(
