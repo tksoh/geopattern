@@ -56,33 +56,29 @@ class App extends StatelessWidget {
           ),
           SliverList(
               delegate: SliverChildListDelegate(<Widget>[
-            _buildPatternTile('Chevrons', Chevrons.fromHash(hash)),
-            _buildPatternTile(
-                'ConcentricCircles', ConcentricCircles.fromHash(hash)),
-            _buildPatternTile('Diamonds', Diamonds.fromHash(hash)),
-            _buildPatternTile('Hexagons', Hexagons.fromHash(hash)),
-            _buildPatternTile('MosaicSquares', MosaicSquares.fromHash(hash)),
-            _buildPatternTile('NestedSquares', NestedSquares.fromHash(hash)),
-            _buildPatternTile('Octagons', Octagons.fromHash(hash)),
-            _buildPatternTile(
-                'OverlappingCircles', OverlappingCircles.fromHash(hash)),
-            _buildPatternTile(
-                'OverlappingRings', OverlappingRings.fromHash(hash)),
-            _buildPatternTile('Plaid', Plaid.fromHash(hash)),
-            _buildPatternTile('PlusSigns', PlusSigns.fromHash(hash)),
-            _buildPatternTile('SineWaves', SineWaves.fromHash(hash)),
-            _buildPatternTile('Squares', Squares.fromHash(hash)),
-            _buildPatternTile('Triangles', Triangles.fromHash(hash)),
+            _buildPatternTile(Chevrons.fromHash(hash)),
+            _buildPatternTile(ConcentricCircles.fromHash(hash)),
+            _buildPatternTile(Diamonds.fromHash(hash)),
+            _buildPatternTile(Hexagons.fromHash(hash)),
+            _buildPatternTile(MosaicSquares.fromHash(hash)),
+            _buildPatternTile(NestedSquares.fromHash(hash)),
+            _buildPatternTile(Octagons.fromHash(hash)),
+            _buildPatternTile(OverlappingCircles.fromHash(hash)),
+            _buildPatternTile(OverlappingRings.fromHash(hash)),
+            _buildPatternTile(Plaid.fromHash(hash)),
+            _buildPatternTile(PlusSigns.fromHash(hash)),
+            _buildPatternTile(SineWaves.fromHash(hash)),
+            _buildPatternTile(Squares.fromHash(hash)),
+            _buildPatternTile(Triangles.fromHash(hash)),
           ]))
         ],
       ),
     ));
   }
 
-  Widget _buildPatternTile(String name, GeoPattern pattern,
-      {Color? background}) {
+  Widget _buildPatternTile(GeoPattern pattern, {Color? background}) {
     return ListTile(
-      title: Text(name),
+      title: Text(pattern.runtimeType.toString()),
       subtitle: Container(
         height: 200,
         clipBehavior: Clip.antiAlias,
