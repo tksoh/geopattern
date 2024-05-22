@@ -51,24 +51,8 @@ class Plaid extends GeoPattern {
             .split("")
             .map((String a) => int.parse(a, radix: 16) + 5.0)
             .toList(),
-        horizontalFillColors = hash
-            .substring(0, 20)
-            .split("")
-            .map((String a) => Color.fromARGB(
-                (50 + (int.parse(a, radix: 16) / 16) * 150).round(),
-                50 + (int.parse(a, radix: 16) % 2) * 150,
-                50 + (int.parse(a, radix: 16) % 2) * 150,
-                50 + (int.parse(a, radix: 16) % 2) * 150))
-            .toList(),
-        verticalFillColors = hash
-            .substring(20)
-            .split("")
-            .map((String a) => Color.fromARGB(
-                (50 + (int.parse(a, radix: 16) / 16) * 150).round(),
-                50 + (int.parse(a, radix: 16) % 2) * 150,
-                50 + (int.parse(a, radix: 16) % 2) * 150,
-                50 + (int.parse(a, radix: 16) % 2) * 150))
-            .toList(),
+        horizontalFillColors = GeoPattern.hashColors(hash.substring(0, 20)),
+        verticalFillColors = GeoPattern.hashColors(hash.substring(20)),
         _nx = 20,
         _ny = 20;
 
