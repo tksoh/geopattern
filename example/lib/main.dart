@@ -28,34 +28,10 @@ class App extends StatelessWidget {
     final hash = '0123456789' * 4;
 
     return MaterialApp(
-        home: Scaffold(
-      body: CustomScrollView(
-        slivers: <Widget>[
-          const SliverAppBar(
-            backgroundColor: Colors.yellow,
-            expandedHeight: 256,
-            pinned: true,
-            flexibleSpace: FlexibleSpaceBar(
-              title: Text("AppBar"),
-              background: Stack(
-                fit: StackFit.expand,
-                children: <Widget>[
-                  AppBarBackground(),
-                  DecoratedBox(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment(0.0, -1.0),
-                        end: Alignment(0.0, -0.4),
-                        colors: <Color>[Color(0x60000000), Color(0x00000000)],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SliverList(
-              delegate: SliverChildListDelegate(<Widget>[
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Geo Patterns')),
+        body: ListView(
+          children: [
             _buildPatternTile(Chevrons.fromHash(hash)),
             _buildPatternTile(ConcentricCircles.fromHash(hash)),
             _buildPatternTile(Diamonds.fromHash(hash)),
@@ -70,10 +46,10 @@ class App extends StatelessWidget {
             _buildPatternTile(SineWaves.fromHash(hash)),
             _buildPatternTile(Squares.fromHash(hash)),
             _buildPatternTile(Triangles.fromHash(hash)),
-          ]))
-        ],
+          ],
+        ),
       ),
-    ));
+    );
   }
 
   Widget _buildPatternTile(GeoPattern pattern, {Color? background}) {
