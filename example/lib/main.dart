@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:geopattern_flutter/geopattern_flutter.dart';
 import 'package:geopattern_flutter/patterns/overlapping_circles.dart';
 
-void main() => runApp(App());
+void main() => runApp(const App());
 
 class App extends StatelessWidget {
+  const App({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,9 +23,9 @@ class App extends StatelessWidget {
               title: const Text("AppBar"),
               background: Stack(
                 fit: StackFit.expand,
-                children: <Widget>[
+                children: const <Widget>[
                   AppBarBackground(),
-                  const DecoratedBox(
+                  DecoratedBox(
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         begin: Alignment(0.0, -1.0),
@@ -52,6 +54,8 @@ class App extends StatelessWidget {
 }
 
 class AppBarBackground extends StatelessWidget {
+  const AppBarBackground({super.key});
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {

@@ -4,13 +4,16 @@ version: 1.0.0+1
 publish_to: none
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: '>=2.17.0 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
   geopattern_flutter:
     path: ../
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
 
 flutter:
   uses-material-design: false
